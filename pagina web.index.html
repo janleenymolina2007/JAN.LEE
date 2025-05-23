@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sitio Web - Janleeny Molina</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        #menu {
+            width: 20%;
+            height: 100vh;
+            background-color: #f2f2f2;
+            float: left;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        #contenido {
+            width: 80%;
+            height: 100vh;
+            float: left;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+        a {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #0066cc;
+        }
+        .seccion {
+            display: none;
+        }
+        .activa {
+            display: block;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+        img {
+            width: 150px;
+            margin: 5px;
+        }
+    </style>
+    <script>
+        function mostrar(id) {
+            var secciones = document.getElementsByClassName("seccion");
+            for (var i = 0; i < secciones.length; i++) {
+                secciones[i].classList.remove("activa");
+            }
+            document.getElementById(id).classList.add("activa");
+        }
+    </script>
+</head>
+<body>
+
+<div id="menu">
+    <a href="#" onclick="mostrar('hoja')">Hoja de vida del alumno</a>
+    <a href="#" onclick="mostrar('notas')">Notas</a>
+    <a href="#" onclick="mostrar('galeria')">Galería</a>
+    <a href="#" onclick="mostrar('video')">Video</a>
+    <a href="#" onclick="mostrar('manual')">Pasos del sitio web</a>
+</div>
+
+<div id="contenido">
+    <div id="hoja" class="seccion activa">
+        <h2>Hoja de Vida</h2>
+        <p><strong>Nombre:</strong> Janleeny Molina</p>
+        <p><strong>Carrera:</strong> Ingeniería en Sistemas</p>
+        <p><strong>Semestre:</strong> Primero</p>
+        <p><strong>Cursos:</strong></p>
+        <ul>
+            <li>Contabilidad I</li>
+            <li>Metodología de la Investigación</li>
+            <li>Lógica de Sistemas</li>
+            <li>Introducción a los Sistemas de Cómputo</li>
+            <li>Desarrollo Humano</li>
+        </ul>
+    </div>
+
+    <div id="notas" class="seccion">
+        <h2>Notas del Primer y Segundo Parcial</h2>
+        <table>
+            <tr><th>Curso</th><th>1er Parcial</th><th>2do Parcial</th></tr>
+            <tr><td>Contabilidad I</td><td>12</td><td>8</td></tr>
+            <tr><td>Metodología de la Investigación</td><td>10</td><td>14</td></tr>
+            <tr><td>Lógica de Sistemas</td><td>15</td><td>12</td></tr>
+            <tr><td>Intro a Sistemas</td><td>7</td><td>4</td></tr>
+            <tr><td>Desarrollo Humano</td><td>10</td><td>13</td></tr>
+        </table>
+    </div>
+
+    <div id="galeria" class="seccion">
+        <h2>Galería de Imágenes</h2>
+        <div>
+            <img src="https://picsum.photos/200?random=1">
+            <img src="https://picsum.photos/200?random=2">
+            <img src="https://picsum.photos/200?random=3">
+            <img src="https://picsum.photos/200?random=4">
+            <img src="https://picsum.photos/200?random=5">
+            <img src="https://picsum.photos/200?random=6">
+            <img src="https://picsum.photos/200?random=7">
+            <img src="https://picsum.photos/200?random=8">
+            <img src="https://picsum.photos/200?random=9">
+            <img src="https://picsum.photos/200?random=10">
+        </div>
+    </div>
+
+    <div id="video" class="seccion">
+        <h2>Video de YouTube</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div id="manual" class="seccion">
+        <h2>Pasos para crear este sitio web</h2>
+        <ol>
+            <li>Crear un archivo llamado <code>index.html</code>.</li>
+            <li>Usar estructura de menú a la izquierda y contenido a la derecha.</li>
+            <li>Agregar las secciones directamente en el mismo archivo HTML.</li>
+            <li>Usar botones o enlaces para mostrar u ocultar las secciones.</li>
+            <li>Usar imágenes desde internet y un iframe de YouTube para el video.</li>
+        </ol>
+    </div>
+</div>
+
+</body>
+</html>
